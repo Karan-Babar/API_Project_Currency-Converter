@@ -159,3 +159,7 @@ const countryList = {
   ZMK: "ZM",
   ZWD: "ZW",
 };
+
+// for (code in countryList){
+//     console.log(code);
+// }
