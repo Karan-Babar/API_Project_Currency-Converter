@@ -1,11 +1,12 @@
 const BASE_URL =
-  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+  "https://api.frankfurter.app/latest?from";
 
   const dropdowns = document.querySelectorAll(".dropdown select");
 
   const btn = document.querySelector("form button");
   const fromCurr = document.querySelector(".from select");
   const toCurr = document.querySelector(".to select");
+  const msg = document.querySelector(".msg");
 
   for (let select of dropdowns){
     for (currcode in countryList){
@@ -44,8 +45,14 @@ btn.addEventListener("click", async (evt) =>{
   }
 
   console.log(fromCurr.value, toCurr.value);
-  const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+  const URL = `${BASE_URL}=${fromCurr.value}&to=${toCurr.value}`;
   let response = await fetch(URL);
-  console.log(response);
+  let data = await response.json();
+  let rate = data.rates[toCurr.value];
+  // console.log(data);
+  console.log(rate);
+
+  let finalAmount = amtVal * rate;
+  msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
 })
  
