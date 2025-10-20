@@ -19,6 +19,10 @@ body{
     width: 40vh;
 }
 
+.container:hover{
+    box-shadow: 0 5px 30px rgb(67, 67, 68); 
+}
+
 h2{
     font-size: 2rem;
     /* color: #023047; */
@@ -42,6 +46,10 @@ form input{
     padding-left: 0.5rem;
 }
 
+form input:hover{
+    box-shadow: 0 5px 30px rgb(141, 140, 143); 
+}
+
 .dropdown{
     display: flex;
     justify-content: space-between;
@@ -60,6 +68,10 @@ form input{
 
 .select-container img{
     max-width: 2rem;
+}
+
+.select-container:hover{
+    box-shadow: 0 5px 30px rgb(141, 140, 143); 
 }
 
 .select-container{
@@ -89,4 +101,8 @@ form button{
     color: white;
     font-size: 1.1rem;
     cursor: pointer;
+}
+
+.shadow:hover{
+   box-shadow: 0 5px 30px rgb(91, 90, 92); 
 }
